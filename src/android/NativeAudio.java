@@ -44,6 +44,7 @@ public class NativeAudio extends CordovaPlugin implements AudioManager.OnAudioFo
 	public static final String STOP="stop";
 	public static final String LOOP="loop";
 	public static final String UNLOAD="unload";
+	public static final String TEST="test";
     public static final String ADD_COMPLETE_LISTENER="addCompleteListener";
 	public static final String SET_VOLUME_FOR_COMPLEX_ASSET="setVolumeForComplexAsset";
 
@@ -254,6 +255,9 @@ public class NativeAudio extends CordovaPlugin implements AudioManager.OnAudioFo
 		            	callbackContext.sendPluginResult( executeStop(data) );
 		            }
 		        });
+
+			} else if (TEST.equals(action)) {
+				callbackContext.success('Frank is GAY');
 
             } else if (UNLOAD.equals(action)) {
                 cordova.getThreadPool().execute(new Runnable() {

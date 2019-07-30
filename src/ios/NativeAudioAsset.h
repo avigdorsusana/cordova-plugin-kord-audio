@@ -26,6 +26,7 @@ typedef void (^CompleteCallback)(NSString*);
 - (void) stop;
 - (void) stopWithFade;
 - (void) loop;
+- (void) test;
 - (void) unload;
 - (void) setVolume:(NSNumber*) volume;
 - (void) setCallbackAndId:(CompleteCallback)cb audioId:(NSString*)audioId;

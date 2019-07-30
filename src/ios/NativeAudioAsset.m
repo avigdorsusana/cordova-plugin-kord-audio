@@ -93,6 +93,11 @@ static const CGFloat FADE_DELAY = 0.08;
     }
 }
 
+- (void) test
+{
+    
+}
+
 // The volume is decreased repeatedly by the fade step amount until the volume reaches the configured level.
 // The delay determines how fast the increase happens
 - (void)stopWithFade

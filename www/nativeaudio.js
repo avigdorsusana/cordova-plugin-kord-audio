@@ -59,5 +59,9 @@ module.exports  = {
 
     setVolumeForComplexAsset: function (id, volume, successCallback, errorCallback) {
         return cordova.exec(successCallback, errorCallback, "NativeAudio", "setVolumeForComplexAsset", [id, parseFloat(volume)]);
+	},
+	
+	test: function(id, successCallback, errorCallback) {
+        return cordova.exec(successCallback, errorCallback, "NativeAudio", "test", []);
     }
 };
