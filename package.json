@@ -1,6 +1,6 @@
 {
 	"name": "cordova-plugin-kord-audio",
-	"version": "1.0.13",
+	"version": "1.0.14",
 	"description": "Cordova KORD Audio Plugin",
 	"cordova": {
 		"id": "cordova-plugin-kord-audio",
