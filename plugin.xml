@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-kord-audio" version="1.0.12">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-kord-audio" version="1.0.13">
       
     <name>KORDaudio</name>
     <author>Avigdor Susana and Frank Mendez</author>
@@ -27,8 +27,8 @@
 				<!--<param name="SWIFT-VERSION" value="4.0" />-->
 			</feature>
 		</config-file>
-		<!--<preference name="swift-version" value="4.0" />
-		<param name="SWIFT-VERSION" value="4.0" />-->
+		<!--<preference name="swift-version" value="4.0" />-->
+		<param name="SWIFT-VERSION" value="4.0" />
 		<preference name="swift-version" value="4.0" />
 		<preference name="UseLegacySwiftLanguageVersion" value="true" />
 		<source-file src="src/ios/kord.audio.swift" />
