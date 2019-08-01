@@ -13,7 +13,6 @@ public class Hello extends CordovaPlugin {
 
             String name = data.getString(0);
             this.greet(name);
-
             return true;
 
         } else {
