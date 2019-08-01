@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-kord-audio" version="1.0.20">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-kord-audio" version="1.0.21">
       
     <name>KORDaudio</name>
     <author>Avigdor Susana and Frank Mendez</author>
@@ -11,23 +11,33 @@
     <repo>https://github.com/avigdorsusana/cordova-plugin-kord-audio.git</repo>
     <issue>https://github.com/avigdorsusana/cordova-plugin-kord-audio/issues</issue>
 
-	<js-module name="KORDaudio" src="www/kord.audio.js">
-		<clobbers target="KORDaudio" />
+	<name>AudioPlayer</name>
+    <description>Cordova Media Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,media</keywords>
+    <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-audioplayer.git</repo>
+    <issue>https://github.com/phi-jp/cordova-plugin-audioplayer</issue>
+
+	<js-module name="DeviceAudioService" src="www/kord.audio.js">
+		<clobbers target="DeviceAudioService" />
 	</js-module>
 
 	<platform name="ios">
 		<config-file parent="/*" target="config.xml">
-			<feature name="KORDaudio">
-				<param name="ios-package" value="pKORDaudio" />
+			<feature name="DeviceAudioService">
+				<param name="ios-package" value="DeviceAudioService" />
 			</feature>
 		</config-file>
 		
 		<header-file src="src/ios/kord.audio.h" />
         <source-file src="src/ios/kord.audio.m" />
+		<header-file src="src/ios/kord.audio.item.h" />
+        <source-file src="src/ios/kord.audio.item.m" />
 	</platform>
 
+	<!--
 	<platform name="android">
-        <config-file parent="/*" target="res/xml/config.xml">
+        <config-file parent="/*" target="config.xml">
             <feature name="KORDaudio" >
                 <param name="android-package" value="com.playkord.plugin.KORDaudio"/>               
             </feature>
@@ -35,6 +45,7 @@
 
         <source-file src="src/android/kord.audio.java" target-dir="src/org/apache/cordova/plugin" />        
     </platform>
+	-->
 
     <!-- browser -->
     <!--<platform name="browser">

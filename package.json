@@ -1,6 +1,6 @@
 {
 	"name": "cordova-plugin-kord-audio",
-	"version": "1.0.20",
+	"version": "1.0.21",
 	"description": "Cordova KORD Audio Plugin",
 	"cordova": {
 		"id": "cordova-plugin-kord-audio",
@@ -18,12 +18,10 @@
 	},
 	"keywords": [
 		"cordova",
-		"ecosystem:cordova",
-		"music",
-		"audio"
+		"ecosystem:cordova"
 	],
 	"author": {
-		"name": "Avigdor & Frank"
+		"name": "Avigdor Susana and Frank Mendez"
 	},
 	"license": "MIT"
 }
