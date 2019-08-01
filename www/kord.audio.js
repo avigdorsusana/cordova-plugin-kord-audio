@@ -1,11 +1,7 @@
-var cordova = require('cordova');
+/*global cordova, module*/
 
-var Echo = {
-	echo: function(str, callback) {
-    	cordova.exec(callback, function(err) {
-    		callback('Nothing to echo.');
-    	}, "Echo", "echo", [str]);
+module.exports = {
+    greet: function (name, successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, "Hello", "greet", [name]);
     }
-}
-
-module.exports = Echo;
+};

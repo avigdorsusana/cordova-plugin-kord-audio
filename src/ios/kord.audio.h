@@ -1,9 +1,7 @@
-#import <UIKit/UIKit.h>
-#import <Cordova/CDVPlugin.h>
+#import <Cordova/CDV.h>
 
-@interface Echo : CDVPlugin
-{}
+@interface pKORDaudio : CDVPlugin
 
-- (void)echo:(CDVInvokedUrlCommand*)command;
+- (void) greet:(CDVInvokedUrlCommand*)command;
 
 @end
