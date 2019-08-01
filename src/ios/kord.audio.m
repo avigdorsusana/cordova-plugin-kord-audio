@@ -16,7 +16,7 @@
  */
 
 
-#import "Echo.h"
+#import "kord.audio.h"
 #import <Cordova/CDVPlugin.h>
 
 @implementation Echo
