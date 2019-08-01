@@ -42,7 +42,7 @@
             </feature>
         </config-file>
 
-        <source-file src="src/android/Hello.java" target-dir="src/com/playkord/kordaudio/hello" />        
+        <source-file src="src/android/hello.java" target-dir="src/com/playkord/kordaudio/hello" />        
     </platform>
 
     <!-- browser -->
