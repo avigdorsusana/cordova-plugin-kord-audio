@@ -37,7 +37,7 @@
 
 	<platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
-            <feature name="Hello">
+            <feature name="hello">
                 <param name="android-package" value="com.playkord.kordaudio.hello"/>             
             </feature>
         </config-file>
