@@ -12,7 +12,7 @@ public class Hello extends CordovaPlugin {
         if (action.equals("greet")) {
 
             String name = data.getString(0);
-            this.greet(name);
+            this.greet(name, callbackContext);
             return true;
 
         } else {
