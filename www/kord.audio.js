@@ -28,7 +28,7 @@ var mplExport = {
     },
 
     greet: function (str, aSuccessCallback, aFailureCallback) {
-        return cordova.exec(aSuccessCallback, aFailureCallback, "Hello", "Hello", []);
+        return cordova.exec(aSuccessCallback, aFailureCallback, "Hello", "Hello", [str]);
     }
 };
 
