@@ -37,12 +37,12 @@
 
 	<platform name="android">
         <config-file parent="/*" target="config.xml">
-            <feature name="kordaudio" >
+            <feature name="Hello" >
                 <param name="android-package" value="com.playkord.kordaudio"/>               
             </feature>
         </config-file>
 
-        <source-file src="src/android/Hello.java" target-dir="src/com/playkord/kordaudio/Hello" />        
+        <source-file src="src/android/Hello.java" target-dir="src/com/playkord/kordaudio/" />        
     </platform>
 
     <!-- browser -->
