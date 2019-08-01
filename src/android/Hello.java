@@ -12,8 +12,7 @@ public class Hello extends CordovaPlugin {
         if (action.equals("greet")) {
 
             String name = data.getString(0);
-            String message = "Hello, " + name;
-            callbackContext.success(message);
+            this.greet(name);
 
             return true;
 
@@ -21,6 +20,15 @@ public class Hello extends CordovaPlugin {
             
             return false;
 
+        }
+    }
+
+    private void greet(String str, CallbackContext callbackContext){
+        if (str != null && str.length() > 0) {
+            String message = "Hello, " + name;
+            callbackContext.success(message);
+        } else {
+            callbackContext.error("Expected one non-empty string argument.");
         }
     }
 }
