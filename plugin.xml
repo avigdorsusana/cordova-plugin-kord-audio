@@ -35,7 +35,7 @@
             </feature>
         </config-file>
 
-        <source-file src="src/android/kord.audio.java" target-dir="src/com/playkord/app/" />        
+        <source-file src="src/android/DeviceAudioService.java" target-dir="src/com/playkord/app/" />        
     </platform>
 
     <!-- browser -->
