@@ -38,11 +38,11 @@
 	<platform name="android">
         <config-file parent="/*" target="config.xml">
             <feature name="KORDaudio" >
-                <param name="android-package" value="com.playkord.plugin.KORDaudio"/>               
+                <param name="android-package" value="com.playkord.kordaudio"/>               
             </feature>
         </config-file>
 
-        <source-file src="src/android/kord.audio.java" target-dir="src/org/apache/cordova/plugin" />        
+        <source-file src="src/android/Hello.java" target-dir="src/org/apache/cordova/plugin" />        
     </platform>
 
     <!-- browser -->
