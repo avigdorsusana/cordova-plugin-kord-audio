@@ -35,7 +35,6 @@
         <source-file src="src/ios/kord.audio.item.m" />
 	</platform>
 
-	<!--
 	<platform name="android">
         <config-file parent="/*" target="config.xml">
             <feature name="KORDaudio" >
@@ -45,7 +44,6 @@
 
         <source-file src="src/android/kord.audio.java" target-dir="src/org/apache/cordova/plugin" />        
     </platform>
-	-->
 
     <!-- browser -->
     <!--<platform name="browser">
