@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-kord-audio" version="1.0.15">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-kord-audio" version="1.0.16">
       
     <name>KORDaudio</name>
     <author>Avigdor Susana and Frank Mendez</author>
@@ -11,60 +11,40 @@
     <repo>https://github.com/avigdorsusana/cordova-plugin-kord-audio.git</repo>
     <issue>https://github.com/avigdorsusana/cordova-plugin-kord-audio/issues</issue>
 
-	<engines>
-	    <engine name="cordova" version=">=3.5" />
-	</engines>
-
-
 	<js-module name="hello" src="www/kord.audio.js">
 		<clobbers target="cordova.plugin.kord.audio" />
 	</js-module>
 
 	<platform name="ios">
-		<config-file parent="/*" target="config.xml">
-			<feature name="KORDaudio">
-				<param name="ios-package" value="com.playkord.cordova.plugin.kord.audio" />
-				<!--<param name="SWIFT-VERSION" value="4.0" />-->
-			</feature>
-		</config-file>
-		<!--<preference name="swift-version" value="4.0" />-->
-		<!--<param name="SWIFT-VERSION" value="4.0" />
-		<preference name="swift-version" value="4.0" />
-		<preference name="UseLegacySwiftLanguageVersion" value="true" />-->
-		<source-file src="src/ios/kord.audio.swift" />
-		<!--<dependency id="cordova-plugin-add-swift-support" url="https://github.com/akofman/cordova-plugin-add-swift-support" version="2.0.2" />-->
-	</platform>
-
-
-
-
-
-
-
-	
-
-    <!-- android -->
-    <!--<platform name="android">
-        <js-module src="www/nativeaudio.js" name="nativeaudio">
-            <clobbers target="window.plugins.NativeAudio"/>
-        </js-module>
-
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="NativeAudio">
-                <param name="android-package" value="com.rjfun.cordova.plugin.nativeaudio.NativeAudio"/>
+		<config-file target="config.xml" parent="/*">
+            <feature name="Echo">
+                <param name="ios-package" value="Echo"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/NativeAudio.java" target-dir="src/com/rjfun/cordova/plugin/nativeaudio"/>
-        <source-file src="src/android/NativeAudioAsset.java" target-dir="src/com/rjfun/cordova/plugin/nativeaudio"/>
-        <source-file src="src/android/NativeAudioAssetComplex.java" target-dir="src/com/rjfun/cordova/plugin/nativeaudio"/>
+        <header-file src="src/ios/Echo.h" />
+        <source-file src="src/ios/Echo.m" />
 
-        <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+		<config-file parent="/*" target="config.xml">
+			<feature name="KORDaudio">
+				<param name="ios-package" value="com.playkord.cordova.plugin.kord.audio" />
+			</feature>
+		</config-file>
+		
+		<header-file src="src/ios/kord.audio.h" />
+        <source-file src="src/ios/kord.audio.m" />
+	</platform>
+
+	<platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Echo" >
+                <param name="android-package" value="org.apache.cordova.plugin.Echo"/>               
+            </feature>
         </config-file>
-    </platform>-->
+
+        <source-file src="src/android/Echo.java" target-dir="src/org/apache/cordova/plugin" />        
+    </platform>
 
     <!-- browser -->
     <!--<platform name="browser">
