@@ -1,6 +1,11 @@
-var exec = require('cordova/exec');
+var cordova = require('cordova');
 
-exports.sayHello = function(arg0, success, error) {
-    alert("exports.sayHello "+arg0);
-    exec(success, error, "Hello", "sayHello", [arg0]);
-};
+var Echo = {
+	echo: function(str, callback) {
+    	cordova.exec(callback, function(err) {
+    		callback('Nothing to echo.');
+    	}, "Echo", "echo", [str]);
+    }
+}
+
+module.exports = Echo;

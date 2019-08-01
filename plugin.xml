@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-kord-audio" version="1.0.16">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-kord-audio" version="1.0.17">
       
     <name>KORDaudio</name>
     <author>Avigdor Susana and Frank Mendez</author>
@@ -16,16 +16,6 @@
 	</js-module>
 
 	<platform name="ios">
-		<config-file target="config.xml" parent="/*">
-            <feature name="Echo">
-                <param name="ios-package" value="Echo"/>
-            </feature>
-        </config-file>
-
-        <header-file src="src/ios/Echo.h" />
-        <source-file src="src/ios/Echo.m" />
-
-
 		<config-file parent="/*" target="config.xml">
 			<feature name="KORDaudio">
 				<param name="ios-package" value="com.playkord.cordova.plugin.kord.audio" />
