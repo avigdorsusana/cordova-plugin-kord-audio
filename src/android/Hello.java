@@ -24,7 +24,7 @@ public class Hello extends CordovaPlugin {
 
     private void greet(String str, CallbackContext callbackContext){
         if (str != null && str.length() > 0) {
-            String message = "Hello, " + name;
+            String message = "Hello, " + str;
             callbackContext.success(message);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
