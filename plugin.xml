@@ -38,8 +38,7 @@
 	<platform name="android">
         <config-file parent="/*" target="config.xml">
             <feature name="Hello" >
-                <param name="android-package" value="com.playkord.kordaudio"/> 
-                <param name="onload" value="true" />            
+                <param name="android-package" value="com.playkord.kordaudio"/>             
             </feature>
         </config-file>
 
