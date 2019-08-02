@@ -2,7 +2,7 @@ var argscheck = require('cordova/argscheck'),
     exec = require('cordova/exec');
 
 var mplExport = {
-    addAudioWithIdAndUrl: function ( anId, aUrl, aSuccessCallback, aFailureCallback) {
+    addAudioWithIdAndUrl: function (anId, aUrl, aSuccessCallback, aFailureCallback) {
         return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "addAudioWithIdAndUrl", [anId, aUrl]);
     },    
         
