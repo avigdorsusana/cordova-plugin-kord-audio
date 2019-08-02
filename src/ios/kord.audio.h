@@ -10,6 +10,7 @@
 - (void)addAudioWithIdAndUrl:(CDVInvokedUrlCommand *)command;
 - (void)playAudioWithId:(CDVInvokedUrlCommand *)command;
 - (void)pauseAudioWithId:(CDVInvokedUrlCommand *)command;
+- (void)adjustvolumeAudioWithId:(CDVInvokedUrlCommand *)command;
 - (void)removeAllAudio:(CDVInvokedUrlCommand *)command;
 - (void)audioWithIdIsPaused:(CDVInvokedUrlCommand *)command;
 - (void)audioWithIdShouldResumePlayback:(CDVInvokedUrlCommand *)command;

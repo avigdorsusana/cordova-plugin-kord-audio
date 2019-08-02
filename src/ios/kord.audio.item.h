@@ -14,6 +14,7 @@
 - (void)addAudioWithInvokedUrlCommand:(CDVInvokedUrlCommand *)command;
 - (void)play;
 - (void)pause;
+- (void)volume;
 - (BOOL)shouldResumePlayback;
 
 @end
