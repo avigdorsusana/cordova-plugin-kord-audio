@@ -104,12 +104,11 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 		
 		NSLog(@"adjustvolumeAudioWithId %@ %@",anId,[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]]);
 		if ([registeredAudioElements valueForKey:anId] != nil) {
-			// Provide feedback via a callback that the request vas not successful
 			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:ERROR_AUDIO_KEY_NOT_FOUND];
 		}
 		else
 		{
-			[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] volume];
+			[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] pause];
 			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:OK_AUDIO_VOLUME];
 
 		}
