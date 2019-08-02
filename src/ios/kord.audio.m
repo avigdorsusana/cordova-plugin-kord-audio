@@ -104,35 +104,10 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 	else
 	{
 		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] volume];
-		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:OK_AUDIO_PAUSED];
+		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:OK_AUDIO_VOLUME];
 	}
 
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-
-
-    //[self.commandDelegate runInBackground:^{
-		/*
-		CDVPluginResult *pluginResult;
-
-		NSString *anId = [command.arguments objectAtIndex:0];
-
-		
-		NSLog(@"adjustvolumeAudioWithId %@ %@",anId,[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]]);
-		if ([registeredAudioElements valueForKey:anId] != nil) {
-			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:ERROR_AUDIO_KEY_NOT_FOUND];
-		}
-		else
-		{
-			[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] pause];
-			pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:OK_AUDIO_VOLUME];
-
-		}
-
-		[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-
-        NSLog(@"registeredAudioElements %@",registeredAudioElements);        
-        */
-    //}];
 
 }
 
