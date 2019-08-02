@@ -28,11 +28,11 @@
 			</feature>
 		</config-file>
 		
-		<header-file src="src/ios/kord.audio.swift" />
-		<!--<header-file src="src/ios/kord.audio.h" />
+		<!--<header-file src="src/ios/kord.audio.swift" />-->
+		<header-file src="src/ios/kord.audio.h" />
         <source-file src="src/ios/kord.audio.m" />
 		<header-file src="src/ios/kord.audio.item.h" />
-        <source-file src="src/ios/kord.audio.item.m" />-->
+        <source-file src="src/ios/kord.audio.item.m" />
 	</platform>
 
 	<platform name="android">

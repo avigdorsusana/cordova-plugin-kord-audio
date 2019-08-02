@@ -1,6 +1,7 @@
 //http://media.shopy.net/kord/full.mp3
 
 import Foundation
+import AVFoundation
 
 class DeviceAudioService : CDVPlugin {    
 
