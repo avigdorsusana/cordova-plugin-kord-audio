@@ -46,7 +46,7 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
     double posInSeconds = position / 1000;
 
    
-        int32_t timeScale = thePlayer.currentItem.asset.duration.timescale;
+        int32_t timeScale = [thePlayer].currentItem.asset.duration.timescale;
 		 //CMTime timeToSeek = CMTimeMakeWithSeconds(posInSeconds, timeScale);
 	
         //BOOL isPlaying = (avPlayer.rate > 0 && !avPlayer.error);
