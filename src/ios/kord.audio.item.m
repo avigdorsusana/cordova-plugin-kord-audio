@@ -30,7 +30,7 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 	}
 }
 
-- (void)volume:(CDVInvokedCommand *)command {
+- (void)volume:(CDVInvokedUrlCommand *)command {
 	//NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
 	//numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
 
