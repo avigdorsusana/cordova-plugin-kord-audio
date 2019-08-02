@@ -9,6 +9,7 @@ NSString* OK_AUDIO_REGISTERED = @"OK: audio registered";
 NSString* OK_AUDIO_PLAYING = @"OK: audio playback requested";
 NSString* OK_AUDIO_PAUSED = @"OK: audio paused requested";
 NSString* OK_AUDIO_VOLUME = @"OK: audio volume adjusted";
+NSString* OK_SEEK_VOLUME = @"OK: audio seek requested";
 
 
 NSString* STATUS_AUDIO_IS_PAUSED = @"Status: audio is paused";
@@ -111,6 +112,7 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 
 }
 
+
 - (void)volumehalfAudioWithId:(CDVInvokedUrlCommand *)command {
 	CDVPluginResult *pluginResult;
 	NSString *anId = [command.arguments objectAtIndex:0];
@@ -141,6 +143,24 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 	{
 		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] mute];
 		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:OK_AUDIO_VOLUME];
+	}
+
+	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+
+}
+
+- (void)seekAudioWithId:(CDVInvokedUrlCommand *)command {
+	CDVPluginResult *pluginResult;
+	NSString *anId = [command.arguments objectAtIndex:0];
+
+	NSLog(@"pauseAudioWithId %@ %@",anId,[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]]);
+	if ([registeredAudioElements valueForKey:anId] == nil) {
+		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:ERROR_AUDIO_KEY_NOT_FOUND];
+	}
+	else
+	{
+		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] seek];
+		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:OK_SEEK_VOLUME];
 	}
 
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];

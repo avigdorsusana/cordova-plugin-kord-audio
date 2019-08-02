@@ -40,6 +40,10 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 	[thePlayer setVolume: 0];
 }
 
+- (void)seek {
+	[thePlayer seekToTime: 1000];
+}
+
 - (BOOL)shouldResumePlayback {
 	if ([thePlayer currentTime].value > 0 && self.isPaused == YES) {
 		return YES;

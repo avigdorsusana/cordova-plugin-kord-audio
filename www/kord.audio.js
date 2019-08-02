@@ -25,6 +25,10 @@ var mplExport = {
 	
 	muteAudioWithId: function (anId, aVol, aSuccessCallback, aFailureCallback) {
         return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "muteAudioWithId", [anId, aVol]);
+	},
+	
+	seekAudioWithId: function (anId, aVol, aSuccessCallback, aFailureCallback) {
+        return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "seekAudioWithId", [anId, aVol]);
     },
         
     audioWithIdIsPaused: function (anId, aSuccessCallback, aFailureCallback) {
