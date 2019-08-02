@@ -37,10 +37,10 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 	//float theVol = [numberFormatter numberFromString:@"32.12"].floatValue;
 	//float theVol = [numberFormatter numberFromString:[command.arguments objectAtIndex:1]].floatValue;
 
-	theVol = [[command.arguments objectAtIndex:1] floatValue];
+	//theVol = [[command.arguments objectAtIndex:1] floatValue];
 	//theVol = theVol / 100.0;
 	//if (theVol >= 0.0 || theVol <= 1.0) {
-		[thePlayer setVolume: theVol];
+		[thePlayer setVolume: 0];
 		//return [thePlayer volume];
 	//}
 	/*if ([thePlayer currentTime].value > 0) {
