@@ -48,25 +48,25 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
    
         int32_t timeScale = [thePlayer currentItem].asset.duration.timescale;
         CMTime timeToSeek = CMTimeMakeWithSeconds(posInSeconds, timeScale);
-	/*
-        BOOL isPlaying = (avPlayer.rate > 0 && !avPlayer.error);
-        BOOL isReadyToSeek = (avPlayer.status == AVPlayerStatusReadyToPlay) && (avPlayer.currentItem.status == AVPlayerItemStatusReadyToPlay);
+	
+        //BOOL isPlaying = (avPlayer.rate > 0 && !avPlayer.error);
+        //BOOL isReadyToSeek = (avPlayer.status == AVPlayerStatusReadyToPlay) && (avPlayer.currentItem.status == AVPlayerItemStatusReadyToPlay);
 
         // CB-10535:
         // When dealing with remote files, we can get into a situation where we start playing before AVPlayer has had the time to buffer the file to be played.
         // To avoid the app crashing in such a situation, we only seek if both the player and the player item are ready to play. If not ready, we send an error back to JS land.
-        if(isReadyToSeek) {
-            [avPlayer seekToTime: timeToSeek
+        //if(isReadyToSeek) {
+            [thePlayer seekToTime: timeToSeek
                  toleranceBefore: kCMTimeZero
                   toleranceAfter: kCMTimeZero
                completionHandler: ^(BOOL finished) {
-                   if (isPlaying) [avPlayer play];
+                   if (!isPaused) [avPlayer play];
                }];
-        } else {
-            NSString* errMsg = @"AVPlayerItem cannot service a seek request with a completion handler until its status is AVPlayerItemStatusReadyToPlay.";
-            [self onStatus:MEDIA_ERROR mediaId:mediaId param:
-              [self createAbortError:errMsg]];
-        }
+        //} else {
+        //    NSString* errMsg = @"AVPlayerItem cannot service a seek request with a completion handler until its status is AVPlayerItemStatusReadyToPlay.";
+        //    [self onStatus:MEDIA_ERROR mediaId:mediaId param:
+        //      [self createAbortError:errMsg]];
+        //}
     }
 
 
@@ -74,10 +74,10 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 
 
 
-	int32_t timeScale = [thePlayer currentTime].asset.duration.timescale;
-    CMTime timeToSeek = CMTimeMakeWithSeconds(1000, timeScale);
-	[thePlayer seekToTime: 1000];
-	*/
+	//int32_t timeScale = [thePlayer currentTime].asset.duration.timescale;
+    //CMTime timeToSeek = CMTimeMakeWithSeconds(1000, timeScale);
+	//[thePlayer seekToTime: 1000];
+	
 }
 
 - (BOOL)shouldResumePlayback {
