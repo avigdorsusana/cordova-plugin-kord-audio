@@ -47,7 +47,7 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 
    
         int32_t timeScale = [thePlayer currentItem].asset.duration.timescale;
-        CMTime timeToSeek = CMTimeMakeWithSeconds(posInSeconds, timeScale);
+        //CMTime timeToSeek = CMTimeMakeWithSeconds(posInSeconds, timeScale);
 	
         //BOOL isPlaying = (avPlayer.rate > 0 && !avPlayer.error);
         //BOOL isReadyToSeek = (avPlayer.status == AVPlayerStatusReadyToPlay) && (avPlayer.currentItem.status == AVPlayerItemStatusReadyToPlay);
@@ -56,7 +56,7 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
         // When dealing with remote files, we can get into a situation where we start playing before AVPlayer has had the time to buffer the file to be played.
         // To avoid the app crashing in such a situation, we only seek if both the player and the player item are ready to play. If not ready, we send an error back to JS land.
         //if(isReadyToSeek) {
-			
+
 			/*
             [thePlayer seekToTime: timeToSeek
                  toleranceBefore: kCMTimeZero
