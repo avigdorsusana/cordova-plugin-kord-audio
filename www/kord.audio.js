@@ -29,6 +29,10 @@ var mplExport = {
         
     removeAllAudio: function (aSuccessCallback, aFailureCallback) {
         return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "removeAllAudio", []);
+    },
+
+    greet: function (str, aSuccessCallback, aFailureCallback) {
+        return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "greet", [str]);
     }
 };
 
