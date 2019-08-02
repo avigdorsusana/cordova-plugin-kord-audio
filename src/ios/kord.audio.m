@@ -103,7 +103,7 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 	}
 	else
 	{
-		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] pause];
+		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] volume];
 		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:OK_AUDIO_PAUSED];
 	}
 
