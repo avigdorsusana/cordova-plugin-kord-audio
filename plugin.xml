@@ -11,11 +11,17 @@
     <repo>https://github.com/avigdorsusana/cordova-plugin-kord-audio.git</repo>
     <issue>https://github.com/avigdorsusana/cordova-plugin-kord-audio/issues</issue>
 
+	<!--
 	<js-module name="DeviceAudioService" src="www/kord.audio.js">
 		<clobbers target="DeviceAudioService" />
 	</js-module>
+	-->
 
 	<platform name="ios">
+		<js-module name="DeviceAudioService" src="www/kord.audio.js">
+			<clobbers target="DeviceAudioService" />
+		</js-module>
+
 		<config-file parent="/*" target="config.xml">
 			<feature name="DeviceAudioService">
 				<param name="ios-package" value="DeviceAudioService" />
