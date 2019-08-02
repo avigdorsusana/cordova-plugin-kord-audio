@@ -43,11 +43,11 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 - (void)seek {
 	//double position = [[command argumentAtIndex:1] doubleValue];
 	double position = 1000;
-    //double posInSeconds = position / 1000;
+    double posInSeconds = position / 1000;
 
    
-    //    int32_t timeScale = [thePlayer currentItem].asset.duration.timescale;
-    //    CMTime timeToSeek = CMTimeMakeWithSeconds(posInSeconds, timeScale);
+        int32_t timeScale = [thePlayer currentItem].asset.duration.timescale;
+        CMTime timeToSeek = CMTimeMakeWithSeconds(posInSeconds, timeScale);
 	/*
         BOOL isPlaying = (avPlayer.rate > 0 && !avPlayer.error);
         BOOL isReadyToSeek = (avPlayer.status == AVPlayerStatusReadyToPlay) && (avPlayer.currentItem.status == AVPlayerItemStatusReadyToPlay);
