@@ -42,7 +42,7 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 
 - (void)seek {
 	//double position = [[command argumentAtIndex:1] doubleValue];
-	//double position = [1000 doubleValue];
+	double position = 1000;
     //double posInSeconds = position / 1000;
 
    
