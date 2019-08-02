@@ -50,16 +50,16 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 		timeScale = CMTimeMake(4300, 1000);
 		//CMTime timeToSeek = CMTimeMakeWithSeconds(posInSeconds, timeScale);
 	
-		[thePlayer seekToTime:timeScale toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:^(BOOL finished) {
+		/*[thePlayer seekToTime:timeScale toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:^(BOOL finished) {
 			if (finished) {
-				/*[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mediaAudioPlaybackFinished) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
-				NSLog(@"CURRENT TIME: %lld", _mediaAudioPlayer.currentTime.value);
-				[_mediaAudioPlayer play];*/
+				//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mediaAudioPlaybackFinished) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+				//NSLog(@"CURRENT TIME: %lld", _mediaAudioPlayer.currentTime.value);
+				//[_mediaAudioPlayer play];
 
 			} else {
 				//NSLog(@"Could not seek media overlay file.");
 			}
-		}];
+		}];*/
 
 
 
