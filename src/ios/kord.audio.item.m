@@ -34,7 +34,7 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 	NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
 	numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
 
-	//float theVol = [numberFormatter numberFromString:@[command.arguments objectAtIndex:1]].floatValue;
+	float theVol = [numberFormatter numberFromString:[command.arguments objectAtIndex:1]].floatValue;
 
 	//theVol = [[command.arguments objectAtIndex:1] floatValue];
 	//theVol = theVol / 100.0;
