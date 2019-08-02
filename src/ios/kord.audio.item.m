@@ -34,14 +34,14 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 	NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
 	numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
 
-	float theVol = [numberFormatter numberFromString:@[command.arguments objectAtIndex:1]].floatValue;
+	//float theVol = [numberFormatter numberFromString:@[command.arguments objectAtIndex:1]].floatValue;
 
 	//theVol = [[command.arguments objectAtIndex:1] floatValue];
 	//theVol = theVol / 100.0;
-	if (theVol >= 0.0 || theVol <= 1.0) {
+	//if (theVol >= 0.0 || theVol <= 1.0) {
 		[thePlayer setVolume: 0];
 		//return [thePlayer volume];
-	}
+	//}
 	/*if ([thePlayer currentTime].value > 0) {
 		self.isPaused = YES;
 		[thePlayer pause];
