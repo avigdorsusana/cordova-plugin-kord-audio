@@ -93,7 +93,7 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 }
 
 
-- (void)adjustvolumeAudioWithId:(CDVInvokedUrlCommand *)command {
+- (void)volumemaxAudioWithId:(CDVInvokedUrlCommand *)command {
 	CDVPluginResult *pluginResult;
 	NSString *anId = [command.arguments objectAtIndex:0];
 
@@ -103,7 +103,43 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 	}
 	else
 	{
-		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] volume];
+		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] volumemax];
+		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:OK_AUDIO_VOLUME];
+	}
+
+	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+
+}
+
+- (void)volumehalfAudioWithId:(CDVInvokedUrlCommand *)command {
+	CDVPluginResult *pluginResult;
+	NSString *anId = [command.arguments objectAtIndex:0];
+
+	NSLog(@"pauseAudioWithId %@ %@",anId,[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]]);
+	if ([registeredAudioElements valueForKey:anId] == nil) {
+		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:ERROR_AUDIO_KEY_NOT_FOUND];
+	}
+	else
+	{
+		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] volumehalf];
+		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:OK_AUDIO_VOLUME];
+	}
+
+	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+
+}
+
+- (void)muteAudioWithId:(CDVInvokedUrlCommand *)command {
+	CDVPluginResult *pluginResult;
+	NSString *anId = [command.arguments objectAtIndex:0];
+
+	NSLog(@"pauseAudioWithId %@ %@",anId,[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]]);
+	if ([registeredAudioElements valueForKey:anId] == nil) {
+		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:ERROR_AUDIO_KEY_NOT_FOUND];
+	}
+	else
+	{
+		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] mute];
 		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:OK_AUDIO_VOLUME];
 	}
 

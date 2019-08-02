@@ -15,8 +15,16 @@ var mplExport = {
         return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "pauseAudioWithId", [anId]);
 	},
 
-	adjustvolumeAudioWithId: function (anId, aVol, aSuccessCallback, aFailureCallback) {
-        return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "adjustvolumeAudioWithId", [anId, aVol]);
+	volumemaxAudioWithId: function (anId, aVol, aSuccessCallback, aFailureCallback) {
+        return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "volumemaxAudioWithId", [anId, aVol]);
+	},
+	
+	volumehalfAudioWithId: function (anId, aVol, aSuccessCallback, aFailureCallback) {
+        return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "volumehalfAudioWithId", [anId, aVol]);
+	},
+	
+	muteAudioWithId: function (anId, aVol, aSuccessCallback, aFailureCallback) {
+        return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "muteAudioWithId", [anId, aVol]);
     },
         
     audioWithIdIsPaused: function (anId, aSuccessCallback, aFailureCallback) {
@@ -30,10 +38,6 @@ var mplExport = {
     removeAllAudio: function (aSuccessCallback, aFailureCallback) {
         return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "removeAllAudio", []);
     },
-
-    greet: function (str, aSuccessCallback, aFailureCallback) {
-        return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "greet", [str]);
-    }
 };
 
 module.exports = mplExport;
