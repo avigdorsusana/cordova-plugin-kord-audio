@@ -9,7 +9,7 @@ NSString* OK_AUDIO_REGISTERED = @"OK: audio registered";
 NSString* OK_AUDIO_PLAYING = @"OK: audio playback requested";
 NSString* OK_AUDIO_PAUSED = @"OK: audio paused requested";
 NSString* OK_AUDIO_VOLUME = @"OK: audio volume adjusted";
-NSString* OK_SEEK_VOLUME = @"OK: audio seek requested";
+NSString* OK_AUDIO_SEEK = @"OK: audio seek requested";
 
 
 NSString* STATUS_AUDIO_IS_PAUSED = @"Status: audio is paused";
@@ -160,7 +160,7 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 	else
 	{
 		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:[command.arguments objectAtIndex:0]] seek];
-		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:OK_SEEK_VOLUME];
+		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:OK_AUDIO_SEEK];
 	}
 
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
