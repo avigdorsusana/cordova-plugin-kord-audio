@@ -9,7 +9,9 @@
 - (void)pluginInitialize;
 - (void)addAudioWithIdAndUrl:(CDVInvokedUrlCommand *)command;
 - (void)playAudioWithId:(CDVInvokedUrlCommand *)command;
+- (void)playAllAudio:(CDVInvokedUrlCommand *)command;
 - (void)pauseAudioWithId:(CDVInvokedUrlCommand *)command;
+- (void)pauseAllAudio:(CDVInvokedUrlCommand *)command;
 - (void)volumemaxAudioWithId:(CDVInvokedUrlCommand *)command;
 - (void)volumehalfAudioWithId:(CDVInvokedUrlCommand *)command;
 - (void)muteAudioWithId:(CDVInvokedUrlCommand *)command;

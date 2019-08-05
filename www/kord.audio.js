@@ -39,7 +39,15 @@ var mplExport = {
         return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "audioWithIdShouldResumePlayback", [anId]);
     },
         
-    removeAllAudio: function (aSuccessCallback, aFailureCallback) {
+    playAllAudio: function (aSuccessCallback, aFailureCallback) {
+        return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "playAllAudio", []);
+	},
+	
+	pauseAllAudio: function (aSuccessCallback, aFailureCallback) {
+        return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "pauseAllAudio", []);
+	},
+	
+	removeAllAudio: function (aSuccessCallback, aFailureCallback) {
         return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "removeAllAudio", []);
     },
 };
