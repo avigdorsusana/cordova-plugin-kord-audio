@@ -219,9 +219,11 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
     dispatch_time_t fire_time = dispatch_time(DISPATCH_TIME_NOW, offset_time);
 
     // dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.25), dispatch_get_main_queue(), ^{
-    dispatch_after(fire_time, dispatch_get_main_queue(), ^{
-        //NSLog(@"time %llu", t);
-    });
+	for(id key in registeredAudioElements) {
+		dispatch_after(fire_time, dispatch_get_main_queue(), ^{
+			//NSLog(@"time %llu", t);
+		});
+	}
 
 	/*
 	dispatch_time_t playattime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC));
