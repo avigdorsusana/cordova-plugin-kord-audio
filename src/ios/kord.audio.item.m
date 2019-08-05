@@ -27,14 +27,13 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 
 - (void)seek {
 	
-	[thePlayer play];
+	[thePlayer seekToTime:CMTimeMakeWithSeconds(30.0, 60000)];
 	
 }
 
 - (void)pause {
 	if ([thePlayer currentTime].value > 0) {
 		self.isPaused = YES;
-		[thePlayer seekToTime:CMTimeMakeWithSeconds(30.0, 60000)];
 		[thePlayer pause];
 	}
 }
