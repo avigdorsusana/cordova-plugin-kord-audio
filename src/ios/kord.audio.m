@@ -149,6 +149,7 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 
 }
 
+/*
 - (void)seekAudioWithId:(CDVInvokedUrlCommand *)command {
 	CDVPluginResult *pluginResult;
 	NSString *anId = [command.arguments objectAtIndex:0];
@@ -165,7 +166,8 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 
-}
+}*/
+
 
 - (void)audioWithIdIsPaused:(CDVInvokedUrlCommand *)command {
 

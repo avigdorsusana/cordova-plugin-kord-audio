@@ -40,6 +40,7 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 	[thePlayer setVolume: 0];
 }
 
+/*
 - (void)seek {
 	//double position = [[command argumentAtIndex:1] doubleValue];
 	double position = 1000;
@@ -49,16 +50,16 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 		//timeScale = CMTimeMake(4300, 1000);
 		//CMTime timeToSeek = CMTimeMakeWithSeconds(posInSeconds, timeScale);
 	
-		/*[thePlayer seekToTime:timeScale toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:^(BOOL finished) {
-			if (finished) {
-				//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mediaAudioPlaybackFinished) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
-				//NSLog(@"CURRENT TIME: %lld", _mediaAudioPlayer.currentTime.value);
-				//[_mediaAudioPlayer play];
+		//[thePlayer seekToTime:timeScale toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:^(BOOL finished) {
+		//	if (finished) {
+		//		//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mediaAudioPlaybackFinished) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+		//		//NSLog(@"CURRENT TIME: %lld", _mediaAudioPlayer.currentTime.value);
+		//		//[_mediaAudioPlayer play];
 
-			} else {
-				//NSLog(@"Could not seek media overlay file.");
-			}
-		}];*/
+		//	} else {
+		//		//NSLog(@"Could not seek media overlay file.");
+		//	}
+		//}];
 
 
 
@@ -70,13 +71,13 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
         // To avoid the app crashing in such a situation, we only seek if both the player and the player item are ready to play. If not ready, we send an error back to JS land.
         //if(isReadyToSeek) {
 
-			/*
-            [thePlayer seekToTime: timeToSeek
-                 toleranceBefore: kCMTimeZero
-                  toleranceAfter: kCMTimeZero
-               completionHandler: ^(BOOL finished) {
-                   if (!isPaused) [avPlayer play];
-               }];*/
+			
+            //[thePlayer seekToTime: timeToSeek
+            //     toleranceBefore: kCMTimeZero
+            //      toleranceAfter: kCMTimeZero
+            //   completionHandler: ^(BOOL finished) {
+            //       if (!isPaused) [avPlayer play];
+            //   }];
 
         //} else {
         //    NSString* errMsg = @"AVPlayerItem cannot service a seek request with a completion handler until its status is AVPlayerItemStatusReadyToPlay.";
@@ -95,6 +96,7 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 	//[thePlayer seekToTime: 1000];
 	
 }
+*/
 
 - (BOOL)shouldResumePlayback {
 	if ([thePlayer currentTime].value > 0 && self.isPaused == YES) {
