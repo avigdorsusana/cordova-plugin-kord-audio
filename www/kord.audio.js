@@ -27,9 +27,9 @@ var mplExport = {
         return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "muteAudioWithId", [anId, aVol]);
 	},
 	
-	seekAudioWithId: function (anId, aVol, aSuccessCallback, aFailureCallback) {
+	/*seekAudioWithId: function (anId, aVol, aSuccessCallback, aFailureCallback) {
         return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "seekAudioWithId", [anId, aVol]);
-    },
+    },*/
         
     audioWithIdIsPaused: function (anId, aSuccessCallback, aFailureCallback) {
         return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "audioWithIdIsPaused", [anId]);
@@ -41,6 +41,10 @@ var mplExport = {
         
     playAllAudio: function (aSuccessCallback, aFailureCallback) {
         return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "playAllAudio", []);
+	},
+
+	seekAllAudio: function (aSuccessCallback, aFailureCallback) {
+        return cordova.exec(aSuccessCallback, aFailureCallback, "DeviceAudioService", "seekAllAudio", []);
 	},
 	
 	pauseAllAudio: function (aSuccessCallback, aFailureCallback) {

@@ -17,7 +17,7 @@
 - (void)volumemax;
 - (void)volumehalf;
 - (void)mute;
-//- (void)seek;
+- (void)seek;
 - (BOOL)shouldResumePlayback;
 
 @end

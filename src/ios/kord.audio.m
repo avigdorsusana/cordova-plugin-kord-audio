@@ -15,6 +15,7 @@ NSString* STATUS_AUDIO_IS_PAUSED = @"Status: audio is paused";
 NSString* STATUS_AUDIO_IS_PLAYING = @"Status: audio is playing";
 NSString* STATUS_ALL_AUDIO_PLAY = @"Status: all audio is plaiying";
 NSString* STATUS_ALL_AUDIO_PAUSE = @"Status: all audio is paused";
+NSString* STATUS_ALL_AUDIO_SEEK = @"Status: all audio is seek";
 NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 
 - (void)pluginInitialize
@@ -227,6 +228,18 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 	}
 
 	CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:STATUS_ALL_AUDIO_PAUSE];
+	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+
+	NSLog(@"registeredAudioElements %@",registeredAudioElements);
+}
+
+- (void)seekAllAudio:(CDVInvokedUrlCommand *)command {
+
+	for(id key in registeredAudioElements) {
+		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] seek];
+	}
+
+	CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:STATUS_ALL_AUDIO_SEEK];
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 
 	NSLog(@"registeredAudioElements %@",registeredAudioElements);

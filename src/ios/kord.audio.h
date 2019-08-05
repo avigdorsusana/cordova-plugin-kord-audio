@@ -17,6 +17,7 @@
 - (void)muteAudioWithId:(CDVInvokedUrlCommand *)command;
 //- (void)seekAudioWithId:(CDVInvokedUrlCommand *)command;
 - (void)removeAllAudio:(CDVInvokedUrlCommand *)command;
+- (void)seekAllAudio:(CDVInvokedUrlCommand *)command;
 - (void)audioWithIdIsPaused:(CDVInvokedUrlCommand *)command;
 - (void)audioWithIdShouldResumePlayback:(CDVInvokedUrlCommand *)command;
 
