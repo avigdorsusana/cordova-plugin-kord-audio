@@ -209,12 +209,12 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 
 - (void)playAllAudio:(CDVInvokedUrlCommand *)command {
 
-	for(id key in registeredAudioElements) {
+	/*for(id key in registeredAudioElements) {
 		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] seek];
 		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] play];
 		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] pause];
 		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] seek];
-	}
+	}*/
 
 	double delay = 1.00;
 

@@ -27,7 +27,7 @@ NSString* ERROR_AVPLAYER_FAILED = @"Error: AVPlayer instance failed";
 
 - (void)seek {
 	
-	[thePlayer seekToTime:CMTimeMakeWithSeconds(30.0, 60000)];
+	[thePlayer seekToTime:CMTimeMakeWithSeconds(0.0, 60000)];
 	
 }
 
