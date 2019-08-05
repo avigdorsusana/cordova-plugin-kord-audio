@@ -11,9 +11,10 @@ NSString* OK_AUDIO_PAUSED = @"OK: audio paused requested";
 NSString* OK_AUDIO_VOLUME = @"OK: audio volume adjusted";
 NSString* OK_AUDIO_SEEK = @"OK: audio seek requested";
 
-
 NSString* STATUS_AUDIO_IS_PAUSED = @"Status: audio is paused";
 NSString* STATUS_AUDIO_IS_PLAYING = @"Status: audio is playing";
+NSString* STATUS_ALL_AUDIO_PLAY = @"Status: all audio is plaiying";
+NSString* STATUS_ALL_AUDIO_PAUSE = @"Status: all audio is paused";
 NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 
 - (void)pluginInitialize
