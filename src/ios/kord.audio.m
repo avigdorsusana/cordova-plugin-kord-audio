@@ -222,6 +222,7 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 	for(id key in registeredAudioElements) {
 		dispatch_after(fire_time, dispatch_get_main_queue(), ^{
 			//NSLog(@"time %llu", t);
+			[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] play];
 		});
 	}
 
