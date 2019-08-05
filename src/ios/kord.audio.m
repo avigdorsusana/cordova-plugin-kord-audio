@@ -210,12 +210,26 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 - (void)playAllAudio:(CDVInvokedUrlCommand *)command {
 
 
+	double delay = 2.25;
+
+    // 2250000000 = 2.25 * 1000000000
+    dispatch_time_t offset_time = delay * NSEC_PER_SEC;
+
+    // current mach_absolute_time + offset
+    dispatch_time_t fire_time = dispatch_time(DISPATCH_TIME_NOW, offset_time);
+
+    // dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.25), dispatch_get_main_queue(), ^{
+    dispatch_after(fire_time, dispatch_get_main_queue(), ^{
+        //NSLog(@"time %llu", t);
+    });
+
+	/*
 	dispatch_time_t playattime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC));
 	for(id key in registeredAudioElements) {
 		dispatch_after(playattime, dispatch_get_main_queue(), ^{
 			[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] play];
 		}
-	}
+	}*/
 	/*
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		for(id key in registeredAudioElements) {
