@@ -209,8 +209,15 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 
 - (void)playAllAudio:(CDVInvokedUrlCommand *)command {
 
+	for(id key in registeredAudioElements) {
+		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] play];
+	}
+	for(id key in registeredAudioElements) {
+		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] pause];
+	}
 
-	double delay = 2.25;
+
+	double delay = 1.00;
 
     // 2250000000 = 2.25 * 1000000000
     dispatch_time_t offset_time = delay * NSEC_PER_SEC;
@@ -255,6 +262,13 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 
 	for(id key in registeredAudioElements) {
 		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] seek];
+	}
+
+	for(id key in registeredAudioElements) {
+		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] play];
+	}
+	for(id key in registeredAudioElements) {
+		[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] pause];
 	}
 
 	CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:STATUS_ALL_AUDIO_PAUSE];
