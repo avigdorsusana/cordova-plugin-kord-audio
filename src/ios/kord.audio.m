@@ -209,11 +209,20 @@ NSString* STATUS_ALL_AUDIO_REMOVED = @"Status: all audio has been removed";
 
 - (void)playAllAudio:(CDVInvokedUrlCommand *)command {
 
+
+	CGFloat playattime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC);
+	for(id key in registeredAudioElements) {
+		dispatch_after(dispatch_time(playattime), dispatch_get_main_queue(), ^{
+			[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] play];
+		}
+	}
+	/*
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		for(id key in registeredAudioElements) {
 			[(DeviceAudioServiceAudioItem *)[registeredAudioElements valueForKey:key] play];
 		}
 	});
+	*/
 
 	CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:STATUS_ALL_AUDIO_PLAY];
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
